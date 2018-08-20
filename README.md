@@ -15,8 +15,11 @@ Any andesite block that fails a code check will be turned into granite.
 # Commands
 
 /steel-solve x1,y1,z1 x2,y2,z2
+
 /steel-solve last
+
 /steel-solve undo
+
 
 Solver coords parameters are diagonally opposite and define a 3D space within which the solver will treat andesite as strucutral elements and other blocks as load.
 The 'undo' parameter will undo transformations from andesite to granite for the last solve only.
