@@ -9,7 +9,7 @@ All other blocks will be treated as applying vertical gravitational load only (n
 
 After computing total applied loads to each steel (andesite) element, internal loads (plane shears, torsion, axial force and bending moments) will be computed using linear-static FEA methods.
 Then code checks will be performed based on AS 3990-1993 (working stress), treating each element as having a solid square 1m x 1m cross-section.
-Any andesite block that fails a code check will be turned into granite.
+Any andesite block that fails a code check will be turned into granite (or maybe sand).
 
 
 # Commands
