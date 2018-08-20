@@ -1,0 +1,14 @@
+main: SteelCraft.SteelCraft
+name: SteelCraft
+version: 0.1
+author: JCrutchy
+description: Plugin for simulating steel structures in MineCraft.
+api-version: 1.13
+load: POSTWORLD
+commands:
+  test:
+    description: Displays test message.
+    usage: "Usage: '/test'"
+  getpos:
+    description: Displays current position x,y,z coordinate.
+    usage: "Usage: '/getpos'"

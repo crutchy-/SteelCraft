@@ -1,0 +1,36 @@
+<project name="SteelCraft" default="deploy" basedir=".">
+
+	<property name="pluginname" value="SteelCraft"/>
+	<property name="src" location="src"/>
+	<property name="bin" location="bin"/>
+	<property name="dist" location="dist"/>
+	<property name="res" location="res"/>
+	<property name="spigot" location="../../server"/>
+	<property name="deploy" location="${spigot}/plugins"/>
+	<property name="spigot.jar" location="${spigot}/Spigot/Spigot-API/target/spigot-api-1.13-R0.1-SNAPSHOT-shaded.jar"/>
+	
+	<target name="init">
+		<mkdir dir="${bin}"/>
+	</target>
+	
+	<target name="compile" depends="init">
+		<javac srcdir="${src}" destdir="${bin}" includeantruntime="false">
+			<classpath>
+				<pathelement location="${spigot.jar}"/>
+			</classpath>
+		</javac>
+	</target>
+	
+	<target name="dist" depends="compile">
+		<mkdir dir="${dist}"/>
+		<jar jarfile="${dist}/${pluginname}.jar">
+			<fileset dir="${bin}"/>
+			<fileset file="${res}/plugin.yml"/>
+		</jar>
+	</target>
+	
+	<target name="deploy" depends="dist">
+		<copy file="${dist}/${pluginname}.jar" todir="${deploy}"/>
+	</target>
+
+</project>
